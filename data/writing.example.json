@@ -3,7 +3,9 @@
     "eyebrow": "Latest",
     "date": "Jan 2026",
     "title": "Your latest post title",
-    "excerpt": "A short description of your latest post.",
+    "image": "",
+    "excerpt": "A short description of your latest post pulled from the RSS feed.",
+    "preview": "First few lines of the article content showing a glimpse of what the post is about...",
     "readTime": "5 min read",
     "url": "https://your.substack.com/p/your-post"
   },

@@ -56,14 +56,28 @@ function parseRSS(xml) {
     const description = content.match(/<description><!\[CDATA\[(.*?)\]\]><\/description>/)?.[1]
       || content.match(/<description>(.*?)<\/description>/)?.[1]
       || '';
+    const image = content.match(/<enclosure[^>]+url="([^"]+)"/)?.[1] || '';
+    const fullContent = content.match(/<content:encoded><!\[CDATA\[([\s\S]*?)\]\]><\/content:encoded>/)?.[1] || '';
 
     const parsed = parseDate(pubDate);
+    const excerpt = description.replace(/<\/?[^>]+(>|$)/g, '').trim();
+
+    const rawText = fullContent
+      .replace(/<[^>]+>/g, ' ')
+      .replace(/&nbsp;/g, ' ')
+      .replace(/\s+/g, ' ')
+      .replace(/\.(?=[A-Z])/g, '. ')
+      .trim();
+    const preview = rawText.split(' ').slice(0, 60).join(' ') + (rawText.split(' ').length > 60 ? '...' : '');
+
     items.push({
       title: title.replace(/<\/?[^>]+(>|$)/g, '').trim(),
       url: link.trim(),
       date: parsed ? formatDate(parsed) : '',
       isoDate: parsed ? parsed.toISOString() : '',
-      excerpt: description.replace(/<\/?[^>]+(>|$)/g, '').trim().slice(0, 200),
+      image,
+      excerpt,
+      preview,
     });
   }
   return items;
@@ -87,7 +101,9 @@ async function fetchAndSaveWriting(rssUrl, outPath) {
         eyebrow: 'Latest',
         date: first.date,
         title: first.title,
-        excerpt: first.excerpt || 'Read the full post.',
+        image: first.image || '',
+        excerpt: first.excerpt || '',
+        preview: first.preview || '',
         readTime: '',
         url: first.url,
       },

@@ -1,11 +1,19 @@
 {
   "latest": {
     "eyebrow": "Latest",
-    "date": "Jun 2026",
-    "title": "Test post",
-    "excerpt": "Testing the RSS feed.",
+    "date": "Jul 2026",
+    "title": "Why I Stopped Reading Business Books",
+    "image": "https://substackcdn.com/image/fetch/$s_!fatG!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F18f80a83-8033-4727-acfc-43d2d9fff0a9_1408x768.png",
+    "excerpt": "Most business books should be 40 pages. The market makes them 300.",
+    "preview": "Most business books are one good idea wrapped in 200 pages of filler. Jim Collins wrote Built to Last around a simple insight: enduring companies share a core ideology. Good idea. It could fill 40 pages. The book has 342. Chris Zook and James Allen wrote Repeatability on the premise that simple, repeatable processes beat complex strategies. Also a good...",
     "readTime": "",
-    "url": "https://borgesenio.substack.com/p/test-post"
+    "url": "https://borgesenio.substack.com/p/why-i-stopped-reading-business-books"
   },
-  "morePosts": []
+  "morePosts": [
+    {
+      "title": "Test post",
+      "date": "Jun 2026",
+      "url": "https://borgesenio.substack.com/p/test-post"
+    }
+  ]
 }
