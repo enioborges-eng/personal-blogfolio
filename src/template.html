@@ -383,7 +383,7 @@
       <a class="latest-link" href="{{latest.url}}" target="_blank" rel="noopener">
         <h1 class="latest-title" id="latest-title">{{latest.title}}</h1>
       </a>
-      <p class="excerpt">{{latest.excerpt}}</p>
+      {{#if latest.excerpt}}<p class="excerpt">{{latest.excerpt}}</p>{{/if}}
       {{#if latest.image}}<img class="latest-image" src="{{latest.image}}" alt="" />{{/if}}
       {{#if latest.preview}}<p class="preview">{{latest.preview}}</p>{{/if}}
       <p class="readline">
