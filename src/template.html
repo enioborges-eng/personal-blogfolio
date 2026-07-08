@@ -99,12 +99,12 @@
 
   main { display: block; }
   .latest {
-    padding-top: clamp(58px, 11vh, 124px);
-    padding-bottom: clamp(60px, 12vh, 124px);
+    padding-top: clamp(29px, 5.5vh, 62px);
+    padding-bottom: clamp(30px, 6vh, 62px);
     scroll-margin-top: 32px;
   }
   .eyebrow {
-    margin: 0 0 clamp(20px, 3.2vh, 34px);
+    margin: 0 0 clamp(14px, 2vh, 20px);
     font-family: var(--mono);
     font-size: 12px;
     letter-spacing: 0.16em;
@@ -121,7 +121,7 @@
     max-width: 19ch;
     font-family: var(--display);
     font-weight: 600;
-    font-size: clamp(2.55rem, 7.4vw, 5.5rem);
+    font-size: clamp(1.8rem, 5vw, 3.5rem);
     line-height: 1.0;
     letter-spacing: -0.035em;
     color: var(--ink);
@@ -130,15 +130,30 @@
   a.latest-link { display: inline-block; }
   a.latest-link:hover .latest-title { color: var(--accent); }
 
+  .preview {
+    margin: clamp(14px, 2vh, 20px) 0 0;
+    max-width: 56ch;
+    font-size: clamp(1rem, 1.3vw, 1.15rem);
+    line-height: 1.6;
+    color: var(--body-text);
+  }
+  .latest-image {
+    display: block;
+    width: 100%;
+    max-width: 56ch;
+    height: auto;
+    border-radius: var(--r);
+    margin: clamp(14px, 2vh, 20px) 0 0;
+  }
   .excerpt {
-    margin: clamp(24px, 3.4vh, 38px) 0 0;
+    margin: clamp(16px, 2vh, 22px) 0 0;
     max-width: 56ch;
     font-size: clamp(1.06rem, 1.5vw, 1.32rem);
     line-height: 1.5;
     color: var(--body-text);
   }
   .readline {
-    margin: clamp(22px, 3vh, 32px) 0 0;
+    margin: clamp(14px, 2vh, 20px) 0 0;
     font-family: var(--body);
     font-size: 13.5px;
     color: var(--faint);
@@ -166,9 +181,9 @@
   .columns {
     display: grid;
     grid-template-columns: 1.45fr 0.85fr;
-    gap: clamp(40px, 6vw, 88px);
-    padding-top: clamp(54px, 9vh, 96px);
-    padding-bottom: clamp(54px, 9vh, 96px);
+    gap: clamp(24px, 4vw, 50px);
+    padding-top: clamp(27px, 4.5vh, 48px);
+    padding-bottom: clamp(27px, 4.5vh, 48px);
     border-top: 1px solid var(--border);
   }
   .more { scroll-margin-top: 32px; }
@@ -276,7 +291,7 @@
   }
 
   footer.foot {
-    margin-top: clamp(56px, 9vh, 100px);
+    margin-top: clamp(30px, 5vh, 50px);
     padding: 26px 0 56px;
     border-top: 1px solid var(--border);
     font-family: var(--body);
@@ -333,6 +348,7 @@
       --muted-text:  oklch(72% 0 0);
     }
     .excerpt { color: var(--body-text); }
+    .preview { color: var(--body-text); }
     aside.about .bio { color: var(--muted-text); }
   }
 
@@ -368,6 +384,8 @@
         <h1 class="latest-title" id="latest-title">{{latest.title}}</h1>
       </a>
       <p class="excerpt">{{latest.excerpt}}</p>
+      {{#if latest.image}}<img class="latest-image" src="{{latest.image}}" alt="" />{{/if}}
+      {{#if latest.preview}}<p class="preview">{{latest.preview}}</p>{{/if}}
       <p class="readline">
         <span>{{latest.readTime}}</span>
         <span class="dot" aria-hidden="true"></span>
