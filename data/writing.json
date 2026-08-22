@@ -2,14 +2,19 @@
   "latest": {
     "eyebrow": "Latest",
     "date": "Jul 2026",
-    "title": "Why I Stopped Reading Business Books",
-    "image": "https://substackcdn.com/image/fetch/$s_!fatG!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F18f80a83-8033-4727-acfc-43d2d9fff0a9_1408x768.png",
-    "excerpt": "Most business books should be 40 pages. The market makes them 300.",
-    "preview": "Most business books are one good idea wrapped in 200 pages of filler. Jim Collins wrote Built to Last around a simple insight: enduring companies share a core ideology. Good idea. It could fill 40 pages. The book has 342. Chris Zook and James Allen wrote Repeatability on the premise that simple, repeatable processes beat complex strategies. Also a good...",
+    "title": "Paper Napkin Notes on Quantum Computing",
+    "image": "https://substackcdn.com/image/fetch/$s_!Lb_n!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6c9e253c-7f80-4b51-8e67-92acc196f441_907x907.png",
+    "excerpt": "How bits translate to qubits to open a universe of possibilities for computer scientists",
+    "preview": "I started my masters in computer science earlier this year. Quantum computing is one of the subjects on the pathway course for admission. Though I love the topic and was excited about the implications of the subject, I must confess that this isn&#8217;t all intuitive to me. So, I decided to write about it. That usually helps me find out...",
     "readTime": "",
-    "url": "https://borgesenio.substack.com/p/why-i-stopped-reading-business-books"
+    "url": "https://borgesenio.substack.com/p/paper-napkin-notes-on-quantum-computing"
   },
   "morePosts": [
+    {
+      "title": "Why I Stopped Reading Business Books",
+      "date": "Jul 2026",
+      "url": "https://borgesenio.substack.com/p/why-i-stopped-reading-business-books"
+    },
     {
       "title": "Test post",
       "date": "Jun 2026",
