@@ -1,15 +1,20 @@
 {
   "latest": {
     "eyebrow": "Latest",
-    "date": "Jul 2026",
-    "title": "Paper Napkin Notes on Quantum Computing",
-    "image": "https://substackcdn.com/image/fetch/$s_!Lb_n!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6c9e253c-7f80-4b51-8e67-92acc196f441_907x907.png",
-    "excerpt": "How bits translate to qubits to open a universe of possibilities for computer scientists",
-    "preview": "I started my masters in computer science earlier this year. Quantum computing is one of the subjects on the pathway course for admission. Though I love the topic and was excited about the implications of the subject, I must confess that this isn&#8217;t all intuitive to me. So, I decided to write about it. That usually helps me find out...",
+    "date": "Aug 2026",
+    "title": "On parrots and vibe coding",
+    "image": "https://substackcdn.com/image/fetch/$s_!HzCg!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0bb152fe-374a-46c1-a00e-b59a308319f2_2760x1880.png",
+    "excerpt": "Engineers can sound right and move fast by delegating everything to LLMs, but not without consequences.",
+    "preview": "Vibe coding is turning some engineers into parrots. The sound is right. The demo works, the tests are green, it is live and nobody is complaining. Then you ask about the problem next door, the one shaped almost the same, and the fluency drains out of the room. I ship with LLMs and review their output every day, which is...",
     "readTime": "",
-    "url": "https://borgesenio.substack.com/p/paper-napkin-notes-on-quantum-computing"
+    "url": "https://borgesenio.substack.com/p/on-parrots-and-vibe-coding"
   },
   "morePosts": [
+    {
+      "title": "Paper Napkin Notes on Quantum Computing",
+      "date": "Jul 2026",
+      "url": "https://borgesenio.substack.com/p/paper-napkin-notes-on-quantum-computing"
+    },
     {
       "title": "Why I Stopped Reading Business Books",
       "date": "Jul 2026",
