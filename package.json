@@ -5,7 +5,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/borgesenioc/lean-rss-feed-website.git"
+    "url": "git+https://github.com/enioborges-eng/lean-rss-feed-website.git"
   },
   "description": "A writing-first personal website powered by any RSS feed.",
   "scripts": {
