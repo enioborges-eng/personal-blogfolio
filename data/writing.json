@@ -1,29 +1,34 @@
 {
   "latest": {
     "eyebrow": "Latest",
-    "date": "Aug 2026",
-    "title": "On parrots and vibe coding",
-    "image": "https://substackcdn.com/image/fetch/$s_!HzCg!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0bb152fe-374a-46c1-a00e-b59a308319f2_2760x1880.png",
-    "excerpt": "Engineers can sound right and move fast by delegating everything to LLMs, but not without consequences.",
-    "preview": "Vibe coding is turning some engineers into parrots. The sound is right. The demo works, the tests are green, it is live and nobody is complaining. Then you ask about the problem next door, the one shaped almost the same, and the fluency drains out of the room. I ship with LLMs and review their output every day, which is...",
+    "date": "Nov 2026",
+    "title": "Reasoning Is Still the Hard Part",
+    "image": "https://substackcdn.com/image/fetch/$s_!i3Od!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F872b800d-98f7-4da4-a619-a732d4660ca8_1199x1312.png",
+    "excerpt": "Why computer science fundamentals still matter when AI can write the code.",
+    "preview": "Every few weeks, someone announces that learning computer science is a waste of time. AI can build the app. Aunt Amy can ship a website. Why spend years studying software engineering? Meanwhile, preliminary US data for fall 2026 show undergraduate enrollment in computer and information sciences down 12.4% year over year at four-year institutions. The figures don&#8217;t establish AI as...",
     "readTime": "",
-    "url": "https://borgesenio.substack.com/p/on-parrots-and-vibe-coding"
+    "url": "https://enioborges.substack.com/p/reasoning-is-still-the-hard-part"
   },
   "morePosts": [
     {
+      "title": "On parrots and vibe coding",
+      "date": "Aug 2026",
+      "url": "https://enioborges.substack.com/p/on-parrots-and-vibe-coding"
+    },
+    {
       "title": "Paper Napkin Notes on Quantum Computing",
       "date": "Jul 2026",
-      "url": "https://borgesenio.substack.com/p/paper-napkin-notes-on-quantum-computing"
+      "url": "https://enioborges.substack.com/p/paper-napkin-notes-on-quantum-computing"
     },
     {
       "title": "Why I Stopped Reading Business Books",
       "date": "Jul 2026",
-      "url": "https://borgesenio.substack.com/p/why-i-stopped-reading-business-books"
+      "url": "https://enioborges.substack.com/p/why-i-stopped-reading-business-books"
     },
     {
       "title": "Test post",
       "date": "Jun 2026",
-      "url": "https://borgesenio.substack.com/p/test-post"
+      "url": "https://enioborges.substack.com/p/test-post"
     }
   ]
 }

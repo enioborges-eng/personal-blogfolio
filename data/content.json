@@ -1,6 +1,6 @@
 {
   "rss": {
-    "url": "https://borgesenio.substack.com/feed"
+    "url": "https://enioborges.substack.com/feed"
   },
   "site": {
     "domain": "enioborges.com",
@@ -15,8 +15,8 @@
     "emailHref": "mailto:enio@enioborges.com",
     "github": "https://github.com/borgesenioc",
     "linkedin": "https://linkedin.com/in/enioborges",
-    "substack": "https://substack.com/@borgesenio",
+    "substack": "https://substack.com/@enioborges",
     "subscribeLabel": "Subscribe",
-    "subscribeUrl": "https://substack.com/@borgesenio"
+    "subscribeUrl": "https://enioborges.substack.com"
   }
 }
