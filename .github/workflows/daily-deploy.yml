@@ -2,7 +2,8 @@ name: daily-deploy
 
 on:
   schedule:
-    - cron: "0 12 * * *"
+    # Nightly at 02:00 America/Denver (09:00 UTC)
+    - cron: "0 9 * * *"
   workflow_dispatch:
 
 jobs:
