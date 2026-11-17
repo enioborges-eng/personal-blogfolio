@@ -118,7 +118,6 @@
 
   .latest-title {
     margin: 0;
-    max-width: 19ch;
     font-family: var(--display);
     font-weight: 600;
     font-size: clamp(1.8rem, 5vw, 3.5rem);
@@ -132,7 +131,6 @@
 
   .preview {
     margin: clamp(14px, 2vh, 20px) 0 0;
-    max-width: 56ch;
     font-size: clamp(1rem, 1.3vw, 1.15rem);
     line-height: 1.6;
     color: var(--body-text);
@@ -140,14 +138,13 @@
   .latest-image {
     display: block;
     width: 100%;
-    max-width: 56ch;
+    max-width: min(360px, 100%);
     height: auto;
     border-radius: var(--r);
-    margin: clamp(14px, 2vh, 20px) 0 0;
+    margin: clamp(14px, 2vh, 20px) auto 0;
   }
   .excerpt {
     margin: clamp(16px, 2vh, 22px) 0 0;
-    max-width: 56ch;
     font-size: clamp(1.06rem, 1.5vw, 1.32rem);
     line-height: 1.5;
     color: var(--body-text);
