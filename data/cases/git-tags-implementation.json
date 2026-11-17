@@ -6,6 +6,7 @@
   "backUrl": "/#work",
   "blocks": [
     { "type": "p", "text": "We built a simple CI/CD workflow so this B2B SaaS team could stay flexible: urgent customer fixes can now ship independently while larger projects continue on their own schedules. The core insight of the project is about properly setting up automated git tags, release branches, and image registries." },
+    { "type": "image", "src": "/images/deployment_release_identity.png", "alt": "Diagram of the deployment and release identity flow" },
     { "type": "h", "text": "The problem" },
     { "type": "p", "text": "The previous pipeline featured a common DevOps setup: it deployed everything merged into main through a moving latest container image. Shipping one fix meant shipping all the work in progress so far, which is fine for single-headed developments, but could mean delaying another release or taking unfinished changes into production when there are multiple projects going on in parallel. Rollback meant manual intervention in AWS." },
     { "type": "p", "text": "Version tags had been tried before, but they named the source code without reliably identifying the image being deployed, a common issue when the production image is simply labeled \u201clatest\u201d." },

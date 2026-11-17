@@ -1,7 +1,7 @@
 [
   {
     "name": "Urgent fixes without stopping the roadmap",
-    "line": "CI/CD redesign around git tags, SHA-identified images, and release branches so urgent customer fixes ship independently of larger projects.",
+    "line": "A CI/CD redesign for complex projects and time-sensitive customer work.",
     "cssClass": "",
     "case": "git-tags-implementation"
   },

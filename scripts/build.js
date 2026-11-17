@@ -127,6 +127,14 @@ async function fetchAndSaveWriting(rssUrl, outPath) {
 
 const FAVICON_SRC = join(ROOT, 'src', 'favicon.ico');
 const FAVICON_DST = join(OUTPUT_DIR, 'favicon.ico');
+const IMAGES_SRC = join(ROOT, 'src', 'images');
+const IMAGES_DST = join(OUTPUT_DIR, 'images');
+
+function copyImages() {
+  if (!existsSync(IMAGES_SRC)) return;
+  mkdirSync(IMAGES_DST, { recursive: true });
+  for (const f of readdirSync(IMAGES_SRC)) copyFileSync(join(IMAGES_SRC, f), join(IMAGES_DST, f));
+}
 
 function build(data) {
   mkdirSync(OUTPUT_DIR, { recursive: true });
@@ -180,6 +188,7 @@ async function main() {
   const data = { ...content, work, ...writing };
   build(data);
   buildCases(cases, content);
+  copyImages();
 }
 
 main().catch(err => {
