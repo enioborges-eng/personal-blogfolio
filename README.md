@@ -7,12 +7,13 @@ Fork it, set your RSS URL, deploy. Made for those willing to spend time building
 ```mermaid
 flowchart LR
   A[RSS Provider] -->|RSS XML| B[your-feed-url]
-  B -->|daily cron| C[GitHub Actions]
-  C -->|POST| D[Vercel Deploy Hook]
-  D -->|npm run build| E[scripts/build.js]
-  E -->|fetch + parse| B
-  E -->|Handlebars + content| F[dist/index.html]
-  F -->|deploy| G[your-site.com]
+  B -->|2x daily cron| C[GitHub Actions]
+  C -->|build + commit| D[data/writing.json]
+  D -->|push| E[Vercel Git Integration]
+  E -->|npm run build| F[scripts/build.js]
+  F -->|fetch + parse| B
+  F -->|Handlebars + content| G[dist/index.html]
+  G -->|deploy| H[your-site.com]
 ```
 
 ## How it works
@@ -20,7 +21,8 @@ flowchart LR
 - A build script fetches any RSS feed and parses it into posts
 - Handlebars renders the template with your content (bio, work, posts)
 - Output is a single `index.html` -- no server, no database
-- GitHub Actions runs daily, triggers a Vercel redeploy, picks up new posts
+- GitHub Actions runs twice daily, commits new writing data, pushes;
+  the Vercel Git integration deploys the push automatically
 
 ## Quick start
 
