@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{title}} — {{site.domain}}</title>
+  <meta name="description" content="{{subtitle}}" />
+  <link rel="icon" href="/favicon.ico" />
+  <style>
+    :root {
+      --bg:          oklch(98.5% 0 0);
+      --ink:         oklch(20% 0 0);
+      --fg:          oklch(30% 0 0);
+      --muted:       oklch(45% 0 0);
+      --faint:       oklch(62% 0 0);
+      --border:      oklch(90% 0 0);
+      --border-soft: oklch(92% 0 0);
+      --accent:      oklch(50% 0.15 254);
+      --accent-strong: oklch(42% 0.15 254);
+      --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg:          oklch(17% 0 0);
+        --ink:         oklch(96% 0 0);
+        --fg:          oklch(88% 0 0);
+        --muted:       oklch(64% 0 0);
+        --faint:       oklch(48% 0 0);
+        --border:      oklch(26% 0 0);
+        --border-soft: oklch(23% 0 0);
+        --accent:      oklch(72% 0.15 254);
+        --accent-strong: oklch(78% 0.14 254);
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--serif);
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 680px; margin: 0 auto; padding: 0 24px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-strong); }
+    .top {
+      padding: 26px 0 0;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 13.5px;
+    }
+    .top a .arr { display: inline-block; transition: transform .2s ease; }
+    .top a:hover .arr { transform: translateX(-3px); }
+    article.case { padding: clamp(30px, 7vh, 64px) 0 30px; }
+    h1.case-title {
+      margin: 0 0 10px;
+      font-size: clamp(28px, 4.5vw, 38px);
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      font-weight: 600;
+    }
+    p.case-subtitle {
+      margin: 0 0 28px;
+      font-size: 1.06rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+    .case-body h2 {
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 34px 0 10px;
+    }
+    .case-body p { margin: 0 0 18px; color: var(--fg); }
+    .case-body blockquote {
+      margin: 24px 0;
+      padding: 2px 0 2px 18px;
+      border-left: 3px solid var(--border);
+      color: var(--muted);
+      font-style: italic;
+    }
+    .case-footer {
+      margin-top: 40px;
+      padding: 22px 0 60px;
+      border-top: 1px solid var(--border);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 13.5px;
+    }
+  </style>
+</head>
+<body>
+  <header class="top wrap">
+    <a href="{{backUrl}}"><span class="arr" aria-hidden="true">←</span> {{backLabel}}</a>
+  </header>
+  <main class="wrap">
+    <article class="case">
+      <h1 class="case-title">{{title}}</h1>
+      <p class="case-subtitle">{{subtitle}}</p>
+      <div class="case-body">
+        {{#each blocks}}
+        {{#if (eq type "h")}}<h2>{{text}}</h2>{{else if (eq type "quote")}}<blockquote>{{text}}</blockquote>{{else}}<p>{{text}}</p>{{/if}}
+        {{/each}}
+      </div>
+    </article>
+    <div class="case-footer">
+      <a href="{{backUrl}}"><span class="arr" aria-hidden="true">←</span> {{backLabel}}</a>
+    </div>
+  </main>
+</body>
+</html>

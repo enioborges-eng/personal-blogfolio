@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync, mkdirSync, copyFileSync, existsSync } from 'fs';
+import { readFileSync, writeFileSync, mkdirSync, copyFileSync, existsSync, readdirSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import Handlebars from 'handlebars';
@@ -7,8 +7,10 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
 
 const TEMPLATE_FILE = join(ROOT, 'src', 'template.html');
+const CASE_TEMPLATE_FILE = join(ROOT, 'src', 'case.html');
 const OUTPUT_DIR = join(ROOT, 'dist');
 const OUTPUT_FILE = join(OUTPUT_DIR, 'index.html');
+const CASES_DIR = join(ROOT, 'data', 'cases');
 
 const files = {
   content: { src: join(ROOT, 'data', 'content.json'), example: join(ROOT, 'data', 'content.example.json') },
@@ -136,14 +138,48 @@ function build(data) {
   console.log(`Built ${OUTPUT_FILE}`);
 }
 
+Handlebars.registerHelper('eq', (a, b) => a === b);
+
+// Loads data/cases/*.json into a map keyed by slug.
+function loadCases() {
+  const cases = {};
+  if (!existsSync(CASES_DIR)) return cases;
+  for (const f of readdirSync(CASES_DIR)) {
+    if (!f.endsWith('.json')) continue;
+    const c = JSON.parse(readFileSync(join(CASES_DIR, f), 'utf-8'));
+    cases[c.slug || f.replace(/\.json$/, '')] = c;
+  }
+  return cases;
+}
+
+// Attaches a case-study URL to each work item that declares a "case" slug,
+// then renders one dist/work/<slug>.html page per case.
+function buildCases(cases, content) {
+  const outDir = join(OUTPUT_DIR, 'work');
+  mkdirSync(outDir, { recursive: true });
+  const caseTemplate = Handlebars.compile(readFileSync(CASE_TEMPLATE_FILE, 'utf-8'));
+  for (const [slug, c] of Object.entries(cases)) {
+    const html = caseTemplate({ ...c, site: content.site });
+    const outFile = join(outDir, `${slug}.html`);
+    writeFileSync(outFile, html, 'utf-8');
+    console.log(`Built ${outFile}`);
+  }
+}
+
 async function main() {
   const content = readJSON(files.content.src, files.content.example);
   const work = readJSON(files.work.src, files.work.example);
   const writing = await fetchAndSaveWriting(content.rss.url, files.writing.src)
     || readJSON(files.writing.src, files.writing.example);
 
+  const cases = loadCases();
+  for (const item of work) {
+    if (item.case && cases[item.case]) item.url = `/work/${item.case}.html`;
+  }
+
   const data = { ...content, work, ...writing };
   build(data);
+  buildCases(cases, content);
 }
 
 main().catch(err => {

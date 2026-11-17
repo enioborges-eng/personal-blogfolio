@@ -2,7 +2,8 @@
   {
     "name": "Urgent fixes without stopping the roadmap",
     "line": "CI/CD redesign around git tags, SHA-identified images, and release branches so urgent customer fixes ship independently of larger projects.",
-    "cssClass": ""
+    "cssClass": "",
+    "case": "git-tags-implementation"
   },
   {
     "name": "Internal operations platform",

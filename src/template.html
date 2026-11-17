@@ -279,6 +279,18 @@
     color: var(--ink);
     letter-spacing: -0.005em;
   }
+  .work-item dt a.work-link {
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .work-item dt a.work-link:hover { color: var(--accent); }
+  .work-item dt a.work-link .arr {
+    display: inline-block;
+    font-weight: 400;
+    color: var(--faint);
+    transition: transform .2s ease;
+  }
+  .work-item dt a.work-link:hover .arr { transform: translateX(3px); color: var(--accent); }
   .work-item.tba dt { color: var(--faint); font-weight: 400; }
   .work-item dd {
     margin: 0;
@@ -427,7 +439,7 @@
       <dl class="worklist">
         {{#each work}}
         <div class="work-item {{cssClass}}">
-          <dt>{{name}}</dt>
+          <dt>{{#if url}}<a class="work-link" href="{{url}}">{{name}} <span class="arr" aria-hidden="true">→</span></a>{{else}}{{name}}{{/if}}</dt>
           <dd>{{line}}</dd>
         </div>
         {{/each}}
